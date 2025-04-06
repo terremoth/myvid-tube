@@ -7,12 +7,12 @@ const video_block = (title, user, views, uploaded_at) => `
             <rect width="100%" height="100%" fill="#868e96"></rect>
         </svg>
         <div class="card-body">
-            <h6><a href="/video.html">${title}</a></h6>
+            <h6><a href="video.html">${title}</a></h6>
             <small class="badge text-bg-secondary">${views}</small>
             <time class="badge text-black">${uploaded_at}</time>
             <div class="card-footer mt-1 bg-transparent px-0">
                 <span>By </span>
-                <strong class="small bold"><a href="/profile">${user}</a></strong>
+                <strong class="small bold"><a href="profile.html">${user}</a></strong>
             </div>
         </div>  
     </div>
