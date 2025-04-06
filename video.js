@@ -111,3 +111,37 @@ fav_btn.addEventListener('click', evt => {
     fav_btn.innerHTML = '<i class="fa fa-check"></i> Favorited';
 
 });
+
+const submit_comment_btn = document.querySelector('.submit-comment');
+const comment_box = document.querySelector('textarea[name="content"]');
+const comment_counter = document.querySelector('.comments-counter');
+
+const all_comments_area = document.querySelector('.all-comments');
+
+submit_comment_btn.addEventListener('click', evt => {
+    if (!comment_box.checkValidity()) {
+        return comment_box.reportValidity();
+    }
+
+    let comment = DOMPurify.sanitize(comment_box.value, { ALLOWED_TAGS: [] });
+
+    if (!comment) {
+        return alert('Error while trying to comment. You probably cannot comment that.');
+    }
+
+    all_comments_area.innerHTML = `<div class="d-flex mb-4">
+    <div class="flex-shrink-0">
+        <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
+            alt="..." />
+    </div>
+    <div class="ms-3">
+        <div class="fw-bold">You</div>
+        ${comment}
+    </div>
+</div>` + all_comments_area.innerHTML;
+
+comment_box.value = '';
+comment_counter.innerHTML = String(parseInt(comment_counter.innerHTML.split(' ')[0]) + 1) + ' comments';
+
+});
+

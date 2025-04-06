@@ -11,11 +11,11 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [x] video thumbs up/down (video page) - like/dislike outline
 - [x] video thumbs up/down work counter (video page)
 - [x] custom rounded play button (video page)
-- [ ] toasts when "save video to favorite" (video page)
-- [ ] dynamic comment working (also remove scripts injection)
-- [ ] profile page
-- [ ] history/feed/favs/likes page (will be equal)
+- [x] dynamic comment working (also remove scripts injection)
 - [ ] static footer pages with lorem ipsum (will be equal)
+- [ ] profile page
+- [ ] maybe - toasts when "save video to favorite" (video page)
+- [ ] history/feed/favs/likes page (will be equal)
 - [ ] transform into jigsaw (PHP SSG) website
 - [ ] maybe - animate pagination buttons (but it will be necessary more public/open access videos)
 - [ ] save info in indexedDB or Dexie.js/RxDb, whetever, and search bar actually works
@@ -29,3 +29,5 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [ ] shows "someone liked your comment at X"  in the menu (after a minute/random timer, add a balloon on menu)
 - [ ] spinners at home img thumbnails (https://getbootstrap.com/docs/5.3/components/spinners/)
 - [ ] phpstorm check for errors, warnings and improvements
+- [ ] answer comment
+- [ ] delete comment
