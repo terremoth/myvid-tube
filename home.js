@@ -2,12 +2,20 @@ const video_block = (title, user, views, uploaded_at, video_duration) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
     <div class="card h-100 shadow-sm">
         <div class="position-relative">
-            <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1">${video_duration ?? '00:00'}</span>
+            <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1">${video_duration}</span>
+            
+            <div class="spinner-card z-1 position-absolute top-50 start-50 translate-middle">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            
+
             <svg class="w-100 bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" 
                 aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-        </svg>
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+            </svg>
         </div>
 
         <div class="card-body">
@@ -161,6 +169,7 @@ function load_random_img(el) {
     let image = new Image();
     image.onload = function () {
         let card = el.parentElement;
+        card.querySelector('.spinner-card').remove();
         el.remove();
         card.innerHTML = this.outerHTML + card.innerHTML;
     };
@@ -174,7 +183,7 @@ function load_random_img(el) {
     image.src = `https://picsum.photos/id/${rand_img}/320/180`;
 }
 
-document.querySelectorAll('svg.bd-placeholder-img').forEach(el => {
+document.querySelectorAll('.bd-placeholder-img').forEach(el => {
     load_random_img(el);
 });
 
