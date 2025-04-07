@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -14,8 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css"
         integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" type="image/x-icon" sizes="64x64"  href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="favicon.ico">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3">
         <div class="container">
@@ -119,7 +121,7 @@
                     </video>
                 </div>
                 <h1 class="display-6 my-2"></h1>
-                
+
                 <div class="row mt-3">
                     <div class="col-md-6 d-flex align-items-center">
                         <small class="badge text-bg-secondary">14K views</small>
@@ -127,11 +129,27 @@
                         <time class="badge text-black">1 week ago</time>
                     </div>
                     <div class="col-md-6 text-sm-start text-md-end mt-3 mt-sm-3 mt-md-0">
-                        <a class="btn btn-lg btn-outline-primary shadow-sm like" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Like"><i class="fa fa-thumbs-up"></i></a>
+                        <a class="btn btn-lg btn-outline-primary shadow-sm like" data-bs-toggle="tooltip"
+                            data-bs-placement="top" data-bs-title="Like"><i class="fa fa-thumbs-up"></i></a>
                         <span class="badge text-black bg-body-secondary like-counter">43</span>
-                        <a class="btn btn-lg btn-outline-warning dislike" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Dislike"><i class="fa fa-thumbs-down"></i></a>
+                        <a class="btn btn-lg btn-outline-warning dislike" data-bs-toggle="tooltip"
+                            data-bs-placement="top" data-bs-title="Dislike"><i class="fa fa-thumbs-down"></i></a>
                         <span class="badge bg-body-secondary shadow-sm text-black dislike-counter">6</span>
                         <a class="btn btn-outline-primary ms-4 fav-btn"><i class="fa fa-heart"></i> Favorite</a>
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="..." class="rounded me-2" alt="...">
+                            <strong class="me-auto">Bootstrap</strong>
+                            <small>11 mins ago</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Hello, world! This is a toast message.
+                        </div>
                     </div>
                 </div>
 
@@ -140,7 +158,8 @@
                 <h3 class="h3 mb-3">Comments</h3>
                 <textarea maxlength="1024" name="content" class="form-control" required rows="3"
                     placeholder="Join the discussion and leave a comment!"></textarea>
-                <button type="button" class="btn btn-primary mt-3 submit-comment"><i class="fa fa-comment-dots"></i> Comment</button>
+                <button type="button" class="btn btn-primary mt-3 submit-comment"><i class="fa fa-comment-dots"></i>
+                    Comment</button>
                 <hr>
                 <h5 class="mb-3 comments-counter">3 comments</h5>
                 <div class="all-comments">
@@ -149,16 +168,16 @@
                             <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
                                 alt="..." />
                         </div>
-                        <div class="ms-3">
+                        <div class="ms-3 text-break">
                             <div class="fw-bold">John Doe</div>
                             This was my favorite until they release the next one
-    
+
                             <div class="d-flex mt-4">
                                 <div class="flex-shrink-0">
                                     <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
                                         alt="..." />
                                 </div>
-                                <div class="ms-3">
+                                <div class="ms-3 text-break">
                                     <div class="fw-bold">Renato Balestin</div>
                                     And under those conditions, you cannot establish a capital-market evaluation of that
                                     enterprise. You can't get investors.
@@ -167,7 +186,7 @@
                             <div class="d-flex mt-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle"
                                         src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                <div class="ms-3">
+                                <div class="ms-3 text-break">
                                     <div class="fw-bold">TheBadDancer</div>
                                     When you put money directly to a problem, it makes a good headline.
                                 </div>
@@ -301,7 +320,9 @@
             </div>
 
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>&copy; 2025 - <a href="https://github.com/terremoth/myvid-tube">Project</a> made by <a href="https://github.com/terremoth">Terremoth</a> with ⚡ & ❤️ - Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a></p>
+                <p>&copy; 2025 - <a href="https://github.com/terremoth/myvid-tube">Project</a> made by <a
+                        href="https://github.com/terremoth">Terremoth</a> with ⚡ & ❤️ - Licensed under <a
+                        href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a></p>
                 <ul class="list-unstyled d-flex">
                     <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><i
                                 class="fa-brands fa-2xl fa-instagram"></i></a></li>
@@ -316,8 +337,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js" 
-        integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww==" 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js"
+        integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="video.js"></script>
 </body>

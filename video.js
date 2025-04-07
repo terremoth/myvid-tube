@@ -116,6 +116,7 @@ const submit_comment_btn = document.querySelector('.submit-comment');
 const comment_box = document.querySelector('textarea[name="content"]');
 const comment_counter = document.querySelector('.comments-counter');
 const all_comments_area = document.querySelector('.all-comments');
+const toastLiveExample = document.getElementById('liveToast');
 
 submit_comment_btn.addEventListener('click', evt => {
     if (!comment_box.checkValidity()) {
@@ -133,7 +134,7 @@ submit_comment_btn.addEventListener('click', evt => {
         <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
             alt="..." />
     </div>
-    <div class="ms-3">
+    <div class="ms-3 text-break">
         <div class="fw-bold">You</div>
         ${comment}
     </div>
@@ -144,3 +145,11 @@ comment_counter.innerHTML = String(parseInt(comment_counter.innerHTML.split(' ')
 
 });
 
+
+
+// if (fav_btn) {
+//     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+//     fav_btn.addEventListener('click', () => {
+//         toastBootstrap.show();
+//     });
+// }
