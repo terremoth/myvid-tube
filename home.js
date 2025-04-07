@@ -1,6 +1,6 @@
 const video_block = (title, user, views, uploaded_at, video_duration) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
-    <div class="card">
+    <div class="card h-100 shadow-sm">
         <div class="position-relative">
             <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1">${video_duration ?? '00:00'}</span>
             <svg class="w-100 bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" 
@@ -13,8 +13,8 @@ const video_block = (title, user, views, uploaded_at, video_duration) => `
         <div class="card-body">
             <h6><a href="video.html">${title}</a></h6>
             <small class="badge text-bg-secondary">${views}</small>
-            <time class="badge text-black">${uploaded_at}</time>
-            <div class="card-footer mt-1 bg-transparent px-0">
+            <small class="text-black ms-2"><time>${uploaded_at}</time></small>
+            <div class="card-footer mt-3 bg-transparent px-0">
                 <span>By </span>
                 <strong class="small bold"><a href="profile.html">${user}</a></strong>
             </div>
@@ -170,6 +170,7 @@ function load_random_img(el) {
     };
 
     image.classList.add('w-100');
+    image.classList.add('rounded-top');
     image.src = `https://picsum.photos/id/${rand_img}/320/180`;
 }
 
