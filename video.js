@@ -1,6 +1,22 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+function is_mobile() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+
 function shuffle_array(array) {
     const arr = array.slice();
 
@@ -32,12 +48,18 @@ const request = fetch('videos.json').then(async resp => {
 const play_btn = document.querySelector('.video-play-btn');
 const video = document.querySelector('video');
 
+if (is_mobile()) {
+    play_btn.classList.add('d-none');
+}
+
 video.addEventListener('play', () => {
     play_btn.classList.add('d-none');
 });
 
 video.addEventListener('pause', () => {
-    play_btn.classList.remove('d-none');
+    if (!is_mobile()) {
+        play_btn.classList.remove('d-none');
+    }
 });
 
 play_btn.addEventListener('click', evt => {
