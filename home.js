@@ -1,11 +1,15 @@
-const video_block = (title, user, views, uploaded_at) => `
+const video_block = (title, user, views, uploaded_at, video_duration) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
     <div class="card">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" 
-            aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
+        <div class="position-relative">
+            <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1">${video_duration ?? '00:00'}</span>
+            <svg class="w-100 bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" 
+                aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#868e96"></rect>
         </svg>
+        </div>
+
         <div class="card-body">
             <h6><a href="video.html">${title}</a></h6>
             <small class="badge text-bg-secondary">${views}</small>
@@ -110,7 +114,14 @@ let uploaded_at = [
     "6 weeks ago", "8 weeks ago", "4 months ago", "10 months ago", "1.5 years ago",
     "2.5 years ago", "3.5 years ago", "12 years ago", "14 years ago", "20 years ago"
 ];
-  
+
+let video_durations = [
+    "3:42", "7:15", "12:08", "2:31", "9:27", "5:53", "14:20", "8:19", "6:07", "10:44",
+    "4:36", "1:58", "11:32", "13:21", "3:17", "2:05", "7:49", "15:02", "5:21", "6:59",
+    "8:02", "9:45", "4:11", "3:28", "12:50", "6:33", "10:10", "1:25", "7:07", "13:05",
+    "2:40", "4:59", "11:14", "3:03", "5:46", "9:12", "14:38", "8:56", "6:15", "10:01",
+    "12:09", "4:22", "7:30", "5:10", "3:35", "9:59", "2:22", "13:44", "1:49", "6:45"
+];
 
 const max_videos_per_page = 12;
 const main = document.querySelector('main div.row');
@@ -130,6 +141,7 @@ video_titles = shuffle_array(video_titles);
 user_names = shuffle_array(user_names);
 video_views = shuffle_array(video_views);
 uploaded_at = shuffle_array(uploaded_at);
+video_durations = shuffle_array(video_durations);
 
 
 for (let i = 0; i < max_videos_per_page; i++) {
@@ -137,8 +149,9 @@ for (let i = 0; i < max_videos_per_page; i++) {
     let user = user_names.shift();
     let view = video_views.shift();
     let uploaded_time = uploaded_at.shift();
+    let duration = video_durations.shift();
 
-    let body = video_block(title, user, view, uploaded_time);
+    let body = video_block(title, user, view, uploaded_time, duration);
     main.innerHTML += body;
 }
 
@@ -156,6 +169,7 @@ function load_random_img(el) {
         load_random_img(el);
     };
 
+    image.classList.add('w-100');
     image.src = `https://picsum.photos/id/${rand_img}/320/180`;
 }
 

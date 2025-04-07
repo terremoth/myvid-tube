@@ -13,6 +13,7 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [x] custom rounded play button (video page)
 - [x] dynamic comment working (also remove scripts injection)
 - [ ] static footer pages with lorem ipsum (will be equal)
+- [x] video durations in home cards
 - [ ] profile page
 - [ ] maybe - toasts when "save video to favorite" (video page)
 - [ ] history/feed/favs/likes page (will be equal)
@@ -29,5 +30,7 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [ ] shows "someone liked your comment at X"  in the menu (after a minute/random timer, add a balloon on menu)
 - [ ] spinners at home img thumbnails (https://getbootstrap.com/docs/5.3/components/spinners/)
 - [ ] phpstorm check for errors, warnings and improvements
+- [ ] opengraph with social preview - "Watch videos online"
+- [ ] new logo and favicon
 - [ ] answer comment
 - [ ] delete comment
