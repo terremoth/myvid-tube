@@ -115,7 +115,6 @@ fav_btn.addEventListener('click', evt => {
 const submit_comment_btn = document.querySelector('.submit-comment');
 const comment_box = document.querySelector('textarea[name="content"]');
 const comment_counter = document.querySelector('.comments-counter');
-
 const all_comments_area = document.querySelector('.all-comments');
 
 submit_comment_btn.addEventListener('click', evt => {

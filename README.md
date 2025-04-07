@@ -31,6 +31,7 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [ ] spinners at home img thumbnails (https://getbootstrap.com/docs/5.3/components/spinners/)
 - [ ] phpstorm check for errors, warnings and improvements
 - [ ] opengraph with social preview - "Watch videos online"
-- [ ] new logo and favicon
+- [x] new logo and favicon
 - [ ] answer comment
 - [ ] delete comment
+- [ ] json ld, structured data schema.org
