@@ -7,14 +7,14 @@
     <meta name="description" content="{{ $page->description }}">
     <meta name="author" content="Terremoth - github.com/terremoth">
     <link rel="canonical" href="{{ $page->getUrl() }}">
-    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="{{$page->baseUrl}}'/assets/favicon.ico">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="https://terremoth.github.io/myvid-tube/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MY-VID Tube">
     <meta property="og:description" content="Online Videos Universe">
-    <meta property="og:image" content="https://terremoth.github.io/myvid-tube/social-preview-home.jpg">
+    <meta property="og:image" content="{{$page->baseUrl}}'/assets/images/social-preview-home.jpg">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
     <meta property="twitter:url" content="https://terremoth.github.io/myvid-tube/">
     <meta name="twitter:title" content="MY-VID Tube">
     <meta name="twitter:description" content="Online Videos Universe">
-    <meta name="twitter:image" content="https://terremoth.github.io/myvid-tube/social-preview-home.jpg">
+    <meta name="twitter:image" content="{{$page->baseUrl}}/assets/images/social-preview-home.jpg">
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -39,7 +39,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3">
     <div class="container">
         <a class="navbar-brand" href="{{locale_url($page, 'index.html')}}">
-            <img src="assets/favicon.ico" alt="MY-VID Logo" width="38">
+            <img src="{{$page->baseUrl}}/assets/favicon.ico" alt="MY-VID Logo" width="38">
             MY-VID
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -63,9 +63,13 @@
                             <i class="fa fa-globe fa-xl"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="."><span class="fi fi-us"></span> English</a></li>
-                            <li><a class="dropdown-item" href="es"><span class="fi fi-es"></span> Spanish</a></li>
-                            <li><a class="dropdown-item" href="pt-br"><span class="fi fi-br"></span> Portuguese</a>
+                            @foreach(['en' => ['English', 'us'], 'es' => ['Spanish', 'es'], 'pt-BR' => ['Portuguese', 'br']] as $locale => $flag)
+                                <li>
+                                    <a class="dropdown-item" href="{{ translate_path($page, $locale) }}">
+                                        <span class="fi fi-{{$flag[1]}}"></span> {{ $flag[0] }}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

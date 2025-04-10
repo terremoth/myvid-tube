@@ -2,7 +2,7 @@
 
 return [
     'production' => false,
-    'baseUrl' => '',
+    'baseUrl' => 'http://localhost:8000',
     'title' => 'MY-Vid Tube',
     'description' => 'Online Videos Universe',
     'collections' => [],

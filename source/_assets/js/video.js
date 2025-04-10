@@ -1,15 +1,15 @@
-const {shuffle_array, is_mobile} = require('./helpers.js');
+const {shuffle_array, is_mobile, base_url} = require('./helpers.js');
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-fetch('assets/videos.json').then(async resp => {
+fetch(base_url('assets/videos.json')).then(async resp => {
     const json = await resp.json();
     let videos = json.videos;
     let shuffle = shuffle_array(videos);
     let chosen_video = shuffle[0];
     
-    console.log(chosen_video);
+    // console.log(chosen_video);
 
     let img = new Image();
 

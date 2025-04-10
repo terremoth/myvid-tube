@@ -54,9 +54,14 @@ function locale_path_not_en() {
     return locale + '/';
 }
 
+function base_url(append = '') {
+    return window.location.origin + '/' + append;
+}
+
 module.exports = {
     shuffle_array,
     is_mobile,
     get_locale,
-    locale_path_not_en
+    locale_path_not_en,
+    base_url
 };
