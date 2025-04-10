@@ -7,7 +7,7 @@
         "deploy": [
             "vendor/bin/jigsaw build production",
             "git add build_production",
-            "git commit -m 'build for deploy'",
+            "git commit -m \"build for deploy\"",
             "git subtree push --prefix build_production origin gh-pages"
         ]
     }
