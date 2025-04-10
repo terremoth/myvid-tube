@@ -42,7 +42,10 @@ function locale_path_not_en() {
 }
 function base_url() {
   var append = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  return window.location.origin + '/' + append;
+  if (typeof BASE_URL === 'undefined') {
+    var _BASE_URL = window.BASE_URL = window.location.origin;
+  }
+  return BASE_URL + '/' + append;
 }
 module.exports = {
   shuffle_array: shuffle_array,
