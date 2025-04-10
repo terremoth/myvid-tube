@@ -177,4 +177,3 @@ function load_random_img(el) {
 document.querySelectorAll('.bd-placeholder-img').forEach(el => {
     load_random_img(el);
 });
-
