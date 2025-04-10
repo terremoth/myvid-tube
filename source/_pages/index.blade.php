@@ -39,5 +39,5 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ mix('js/home.js', 'assets/build') }}"></script>
+    <script type="text/javascript" src="{{$page->baseUrl . mix('js/home.js', 'assets/build') }}"></script>
 @endsection

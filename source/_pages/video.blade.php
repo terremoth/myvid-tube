@@ -172,5 +172,5 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ mix('js/video.js', 'assets/build') }}"></script>
+    <script type="text/javascript" src="{{$page->baseUrl . mix('js/video.js', 'assets/build') }}"></script>
 @endsection

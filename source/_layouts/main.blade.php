@@ -7,7 +7,7 @@
     <meta name="description" content="{{ $page->description }}">
     <meta name="author" content="Terremoth - github.com/terremoth">
     <link rel="canonical" href="{{ $page->getUrl() }}">
-    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="{{$page->baseUrl}}'/assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="{{$page->baseUrl}}/assets/favicon.ico">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="https://terremoth.github.io/myvid-tube/">
