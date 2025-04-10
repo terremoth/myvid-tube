@@ -55,7 +55,12 @@ function locale_path_not_en() {
 }
 
 function base_url(append = '') {
-    return window.location.origin + '/' + append;
+
+    if (typeof BASE_URL === 'undefined') {
+        const BASE_URL = window.BASE_URL = window.location.origin;
+    }
+
+    return BASE_URL + '/' + append;
 }
 
 module.exports = {
