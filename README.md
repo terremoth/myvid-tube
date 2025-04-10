@@ -29,9 +29,10 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [ ] SEO and performance inspect via lighthouse
 - [ ] shows "someone liked your comment at X"  in the menu (after a minute/random timer, add a balloon on menu)
 - [ ] spinners at home img thumbnails (https://getbootstrap.com/docs/5.3/components/spinners/)
-- [ ] phpstorm check for errors, warnings and improvements
+- [x] phpstorm check for errors, warnings and improvements
 - [x] opengraph with social preview - "Online Videos Universe"
 - [x] new logo and favicon
 - [ ] answer comment
 - [ ] delete comment
 - [ ] json ld, structured data schema.org
+- [ ] placeholder na pagina de video
