@@ -8,9 +8,6 @@ fetch(base_url('assets/videos.json')).then(async resp => {
     let videos = json.videos;
     let shuffle = shuffle_array(videos);
     let chosen_video = shuffle[0];
-    
-    // console.log(chosen_video);
-
     let img = new Image();
 
     img.onload = function() {
@@ -28,7 +25,6 @@ fetch(base_url('assets/videos.json')).then(async resp => {
 
     video_container.src = chosen_video.sources[0];
 
-    
     document.querySelector('article h1').innerHTML = chosen_video.title;
     document.querySelector('article video source').src = chosen_video.sources[0];
     document.querySelector('article a').innerHTML = chosen_video.subtitle;
