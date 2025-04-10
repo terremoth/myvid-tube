@@ -7,6 +7,33 @@
   \**************************************/
 /***/ ((module) => {
 
+function generate_video_duration() {
+  var gen_num = function gen_num() {
+    return String(Math.floor(Math.random() * 60));
+  };
+  var minutes = gen_num();
+  var seconds = gen_num().padStart(2, "0");
+  return "".concat(minutes, ":").concat(seconds);
+}
+function generate_random_views() {
+  var skewed = Math.pow(Math.random(), 9.6); // Mais inclinado para números pequenos
+
+  var min = 153;
+  var max = 2000000;
+  var num = Math.floor(skewed * (max - min) + min);
+  if (num > 2500000) {
+    num = Math.floor(num / 3);
+  }
+  var formatted;
+  if (num < 1000) {
+    formatted = "".concat(num);
+  } else if (num < 1000000) {
+    formatted = (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  } else {
+    formatted = (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  return "".concat(formatted, " views");
+}
 function shuffle_array(array) {
   var arr = array.slice();
   for (var i = arr.length - 1; i > 0; i--) {
@@ -17,11 +44,24 @@ function shuffle_array(array) {
   }
   return arr;
 }
+function generate_uploaded_at() {
+  var timing = ['minutes', 'hours', 'days', 'weeks', 'months', 'years'];
+  var time,
+    time_table = {
+      minutes: 60,
+      hours: 24,
+      days: 30,
+      weeks: 4,
+      months: 12,
+      years: 6
+    };
+  timing = shuffle_array(timing);
+  time = timing = timing.shift();
+  timing = time_table[timing];
+  return "".concat(Math.floor(Math.random() * timing) + 1, " ").concat(time, " ago");
+}
 function is_mobile() {
-  var toMatch = [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
-  return toMatch.some(function (toMatchItem) {
-    return navigator.userAgent.match(toMatchItem);
-  });
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
 }
 function getCookie(name) {
   var _document$cookie$spli;
@@ -52,7 +92,10 @@ module.exports = {
   is_mobile: is_mobile,
   get_locale: get_locale,
   locale_path_not_en: locale_path_not_en,
-  base_url: base_url
+  base_url: base_url,
+  generate_video_duration: generate_video_duration,
+  generate_random_views: generate_random_views,
+  generate_uploaded_at: generate_uploaded_at
 };
 
 /***/ })
@@ -119,7 +162,7 @@ fetch(base_url('assets/videos.json')).then(/*#__PURE__*/function () {
           json = _context.sent;
           videos = json.videos;
           shuffle = shuffle_array(videos);
-          chosen_video = shuffle[0]; // console.log(chosen_video);
+          chosen_video = shuffle[0];
           img = new Image();
           img.onload = function () {
             // document.querySelector('article video').height = img.height; 
