@@ -172,5 +172,8 @@
 @endsection
 
 @section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js"
+            integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="{{$page->baseUrl . mix('js/video.js', 'assets/build') }}"></script>
 @endsection

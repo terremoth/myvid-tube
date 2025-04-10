@@ -16,7 +16,7 @@ function generate_video_duration() {
   return "".concat(minutes, ":").concat(seconds);
 }
 function generate_random_views() {
-  var skewed = Math.pow(Math.random(), 9.6); // Mais inclinado para números pequenos
+  var skewed = Math.pow(Math.random(), 8); // Mais inclinado para números pequenos
 
   var min = 153;
   var max = 2000000;

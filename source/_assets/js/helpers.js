@@ -6,7 +6,7 @@ function generate_video_duration() {
 }
 
 function generate_random_views() {
-    const skewed = Math.pow(Math.random(), 9.6); // Mais inclinado para números pequenos
+    const skewed = Math.pow(Math.random(), 8); // Mais inclinado para números pequenos
 
     const min = 153;
     const max = 2_000_000;
