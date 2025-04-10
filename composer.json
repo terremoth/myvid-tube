@@ -1,0 +1,6 @@
+{
+    "require": {
+        "tightenco/jigsaw": "^1.7",
+        "elaborate-code/jigsaw-localization": "^1.1"
+    }
+}

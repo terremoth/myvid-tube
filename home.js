@@ -119,7 +119,7 @@ let uploaded_at = [
     "8 years ago", "9 years ago", "10 years ago", "15 minutes ago", "45 minutes ago",
     "6 hours ago", "18 hours ago", "10 days ago", "13 days ago", "2 weeks ago",
     "6 weeks ago", "8 weeks ago", "4 months ago", "10 months ago", "1.5 years ago",
-    "2.5 years ago", "3.5 years ago", "12 years ago", "14 years ago", "20 years ago"
+    "2.5 years ago", "3.5 years ago", "12 years ago", "14 years ago", "11 years ago"
 ];
 
 let video_durations = [

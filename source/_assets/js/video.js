@@ -1,34 +1,10 @@
+const {shuffle_array, is_mobile} = require('./helpers.js');
+
+
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-function is_mobile() {
-    const toMatch = [
-        /Android/i,
-        /webOS/i,
-        /iPhone/i,
-        /iPad/i,
-        /iPod/i,
-        /BlackBerry/i,
-        /Windows Phone/i
-    ];
-    
-    return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem);
-    });
-}
-
-function shuffle_array(array) {
-    const arr = array.slice();
-
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    
-    return arr;
-}
-
-const request = fetch('videos.json').then(async resp => {
+const request = fetch('assets/build/videos.json').then(async resp => {
     const json = await resp.json();
     let videos = json.videos;
     let shuffle = shuffle_array(videos);
@@ -36,10 +12,26 @@ const request = fetch('videos.json').then(async resp => {
     
     console.log(chosen_video);
 
+    let img = new Image();
+
+    img.onload = function() {
+        // document.querySelector('article video').height = img.height; 
+        img = null;
+    };
+    img.src = chosen_video.thumb;
+
+    let video_container = document.querySelector('article video');
+    video_container.preload = 'metadata';
+    video_container.poster = chosen_video.thumb;
+    video_container.onloadedmetadata = function () {
+        // logic here
+    };
+
+    video_container.src = chosen_video.sources[0];
+
+    
     document.querySelector('article h1').innerHTML = chosen_video.title;
     document.querySelector('article video source').src = chosen_video.sources[0];
-    document.querySelector('article video').src = chosen_video.sources[0];
-    document.querySelector('article video').poster = chosen_video.thumb;
     document.querySelector('article a').innerHTML = chosen_video.subtitle;
     document.querySelector('article p').innerHTML = chosen_video.description;
 

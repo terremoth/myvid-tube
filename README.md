@@ -17,7 +17,7 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 - [ ] profile page
 - [ ] maybe - toasts when "save video to favorite" (video page)
 - [ ] history/feed/favs/likes page (will be equal)
-- [ ] transform into jigsaw (PHP SSG) website
+- [x] transform into jigsaw (PHP SSG) website
 - [ ] maybe - animate pagination buttons (but it will be necessary more public/open access videos)
 - [ ] save info in indexedDB or Dexie.js/RxDb, whetever, and search bar actually works
 - [ ] make "Related videos" section at /video page dynamic
