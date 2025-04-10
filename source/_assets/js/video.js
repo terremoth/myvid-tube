@@ -1,10 +1,9 @@
 const {shuffle_array, is_mobile} = require('./helpers.js');
 
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+[...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-const request = fetch('assets/build/videos.json').then(async resp => {
+fetch('assets/videos.json').then(async resp => {
     const json = await resp.json();
     let videos = json.videos;
     let shuffle = shuffle_array(videos);
@@ -54,19 +53,17 @@ video.addEventListener('pause', () => {
     }
 });
 
-play_btn.addEventListener('click', evt => {
+play_btn.addEventListener('click', () => {
     play_btn.classList.add('d-none');
     video.play();
 });
-
-let like_state = 0;
 
 const like_btn = document.querySelector('.like');
 const dislike_btn = document.querySelector('.dislike');
 let like_counter = document.querySelector('.like-counter');
 let dislike_counter = document.querySelector('.dislike-counter');
 
-like_btn.addEventListener('click', evt => {
+like_btn.addEventListener('click', () => {
 
     if (like_btn.classList.contains('btn-primary')) {
         like_btn.classList.remove('btn-primary');
@@ -87,7 +84,7 @@ like_btn.addEventListener('click', evt => {
     dislike_btn.classList.add('btn-outline-warning');
 });
 
-dislike_btn.addEventListener('click', evt => {
+dislike_btn.addEventListener('click', () => {
 
     if (dislike_btn.classList.contains('btn-warning')) {
         dislike_btn.classList.remove('btn-warning');
@@ -108,21 +105,21 @@ dislike_btn.addEventListener('click', evt => {
     like_btn.classList.add('btn-outline-primary');
 });
 
-const fav_btn = document.querySelector('.fav-btn');
+const favorite_btn = document.querySelector('.fav-btn');
 
-fav_btn.addEventListener('click', evt => {
+favorite_btn.addEventListener('click', () => {
 
-    if (fav_btn.classList.contains('btn-success')) {
-        fav_btn.classList.remove('btn-success');
-        fav_btn.classList.add('btn-outline-primary');
-        fav_btn.innerHTML = '<i class="fa fa-heart"></i> Favorite';
+    if (favorite_btn.classList.contains('btn-success')) {
+        favorite_btn.classList.remove('btn-success');
+        favorite_btn.classList.add('btn-outline-primary');
+        favorite_btn.innerHTML = '<i class="fa fa-heart"></i> Favorite';
 
         return;
     }
 
-    fav_btn.classList.remove('btn-outline-primary');
-    fav_btn.classList.add('btn-success');
-    fav_btn.innerHTML = '<i class="fa fa-check"></i> Favorited';
+    favorite_btn.classList.remove('btn-outline-primary');
+    favorite_btn.classList.add('btn-success');
+    favorite_btn.innerHTML = '<i class="fa fa-check"></i> Favorited';
 
 });
 
@@ -130,9 +127,9 @@ const submit_comment_btn = document.querySelector('.submit-comment');
 const comment_box = document.querySelector('textarea[name="content"]');
 const comment_counter = document.querySelector('.comments-counter');
 const all_comments_area = document.querySelector('.all-comments');
-const toastLiveExample = document.getElementById('liveToast');
+// const toastLiveExample = document.getElementById('liveToast');
 
-submit_comment_btn.addEventListener('click', evt => {
+submit_comment_btn.addEventListener('click', () => {
     if (!comment_box.checkValidity()) {
         return comment_box.reportValidity();
     }
@@ -158,12 +155,3 @@ comment_box.value = '';
 comment_counter.innerHTML = String(parseInt(comment_counter.innerHTML.split(' ')[0]) + 1) + ' comments';
 
 });
-
-
-
-// if (fav_btn) {
-//     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-//     fav_btn.addEventListener('click', () => {
-//         toastBootstrap.show();
-//     });
-// }

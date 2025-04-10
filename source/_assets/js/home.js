@@ -1,4 +1,4 @@
-const {shuffle_array} = require('./helpers.js');
+const {shuffle_array, locale_path_not_en} = require('./helpers.js');
 
 const video_block = (title, user, views, uploaded_at, video_duration) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
@@ -20,12 +20,12 @@ const video_block = (title, user, views, uploaded_at, video_duration) => `
         </div>
 
         <div class="card-body">
-            <h6><a href="video.html">${title}</a></h6>
+            <h6><a href="${locale_path_not_en()}video.html">${title}</a></h6>
             <small class="badge text-bg-secondary">${views}</small>
             <small class="text-black ms-2"><time>${uploaded_at}</time></small>
             <div class="card-footer mt-3 bg-transparent px-0">
                 <span>By </span>
-                <strong class="small bold"><a href="profile.html">${user}</a></strong>
+                <strong class="small bold"><a href="${locale_path_not_en()}profile.html">${user}</a></strong>
             </div>
         </div>  
     </div>
@@ -165,7 +165,7 @@ function load_random_img(el) {
         card.innerHTML = this.outerHTML + card.innerHTML;
     };
     
-    image.onerror = function (evt, source, line, col, error) {
+    image.onerror = function () {
         load_random_img(el);
     };
 
