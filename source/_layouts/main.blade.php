@@ -65,7 +65,7 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                             @foreach(['en' => ['English', 'us'], 'es' => ['Spanish', 'es'], 'pt-BR' => ['Portuguese', 'br']] as $locale => $flag)
                                 <li>
-                                    <a class="dropdown-item" href="{{ translate_path($page, $locale) }}">
+                                    <a class="dropdown-item" href="{{ translate_url($page, $locale) }}">
                                         <span class="fi fi-{{$flag[1]}}"></span> {{ $flag[0] }}
                                     </a>
                                 </li>
