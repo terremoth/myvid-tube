@@ -7,7 +7,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 document.querySelector('.notifications-menu').addEventListener('click', function (evt) {
   var _document$querySelect;
-  (_document$querySelect = document.querySelector('.notification-balloon')) === null || _document$querySelect === void 0 || _document$querySelect.remove();
+  (_document$querySelect = document.querySelector('.notifications-menu a span')) === null || _document$querySelect === void 0 || _document$querySelect.remove();
 });
 var input_search = document.getElementById('search');
 var trend_history = document.getElementById('trend-history');
@@ -106,36 +106,6 @@ pagination_links.forEach(function (el) {
     });
     el.classList.add('active');
   });
-});
-document.getElementById('subscribe-newsletter-btn').addEventListener('click', function (evt) {
-  evt.preventDefault();
-  var email_input = document.getElementById('newsletter1');
-  if (!email_input.checkValidity()) {
-    return email_input.reportValidity();
-  }
-  var modal = "\n        <div class=\"modal fade\" id=\"subscribe-modal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n            <div class=\"modal-dialog\">\n                <div class=\"modal-content\">\n                    <div class=\"modal-header\">\n                        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Successfully Subscribed</h1>\n                        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n                    </div>\n                    <div class=\"modal-body\">\n                        You have subscribed to our newsletter. Check your email!\n                    </div>\n                    <div class=\"modal-footer\">\n                        <button type=\"button\" class=\"btn btn-success\" data-bs-dismiss=\"modal\"><i class=\"fa fa-check\"></i> Close</button>\n                    </div>\n                </div>\n            </div>\n        </div>";
-  var template = document.createElement('template');
-  template.innerHTML = modal.trim();
-  var modal_element = template.content.firstElementChild;
-  document.body.append(modal_element);
-  modal_element = document.getElementById('subscribe-modal');
-  var modal_bootstrap = new bootstrap.Modal(modal_element, {});
-  modal_bootstrap.show();
-  modal_element.addEventListener('hidden.bs.modal', function (event) {
-    modal_element.remove();
-  });
-});
-var layout_theme_changer = document.querySelector('.layout-theme');
-layout_theme_changer.addEventListener('click', function () {
-  var theme = document.documentElement.dataset;
-  var next_theme = 'dark';
-  var next_description = "<i class=\"fa fa-moon me-2\"></i> Theme: dark</a>";
-  if (theme.bsTheme !== 'light') {
-    next_theme = 'light';
-    next_description = "<i class=\"fa fa-sun me-2\"></i> Theme: light</a>";
-  }
-  theme.bsTheme = next_theme;
-  layout_theme_changer.innerHTML = next_description;
 });
 /******/ })()
 ;
