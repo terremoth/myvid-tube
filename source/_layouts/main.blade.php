@@ -68,8 +68,15 @@
         <div class="w-100 mt-3 mt-lg-0">
             <form class="d-flex ms-sm-3 col-lg-9" role="search">
                 <div class="input-group">
-                    <input class="form-control flex-grow-1 shadow-sm" type="search" placeholder="Search"
+                    <input role="combobox" autocomplete="off" list="" id="search" class="form-control flex-grow-1 shadow-sm" type="search" placeholder="Search"
                            aria-label="Search">
+                    <datalist class="position-absolute border border-primary rounded-bottom bd-white w-100 z-1 top-100" id="trend-history">
+                        <option role="button" class="text-black bg-white w-100" value="the random ronaldinho">🔍 the random ronaldinho</option>
+                        <option role="button" class="text-black bg-white w-100" value="taylor swift">🔍 taylor swift</option>
+                        <option role="button" class="text-black bg-white w-100" value="marvel movies 2026">🔍 marvel movies 2026</option>
+                        <option role="button" class="text-black bg-white w-100" value="chatgpt became self conscious">🔍 chatgpt became self conscious</option>
+                        <option role="button" class="text-black bg-white w-100 rounded-bottom" value="aaron swartz documentary">🔍 aaron swartz documentary</option>
+                    </datalist>
                     <div class="w-auto">
                         <button class="btn btn-primary px-4 rounded-start-0 shadow-sm" type="submit"><i
                                     class="fa fa-magnifying-glass"></i></button>
@@ -94,11 +101,11 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0">
-                <li class="nav-item dropdown ms-3">
+                <li class="nav-item dropdown ms-3 notifications-menu">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         <i class="fa fa-bell fa-xl"></i>
-                        <span class="position-absolute translate-middle badge rounded-pill bg-danger">
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger notification-balloon">
                                 3
                                 <span class="visually-hidden">unread messages</span>
                             </span>
@@ -114,6 +121,9 @@
                                 followed you</a></li>
                         <li><a class="dropdown-item" href="#"><span class="fa fa-user-plus me-2"></span> Mary Jane
                                 followed you</a></li>
+                        <li><a class="dropdown-item" href="#">
+                                <span class="fa fa-video me-2"></span> Grunge9000 added a new video:<br>
+                                <i class="me-2">Tuning my Nissan 350Z</i></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown ms-3">
@@ -131,6 +141,8 @@
                         </li>
                         <li><a class="dropdown-item" href="history"><i class="fa fa-clock-rotate-left me-2"></i>
                                 History</a></li>
+                        <li><a class="dropdown-item layout-theme" href="#"><i class="fa fa-sun me-2"></i>
+                                Theme: light</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -184,9 +196,11 @@
                     <h5>Subscribe to our newsletter</h5>
                     <p>Monthly digest of what's new and exciting from us!</p>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="email" class="form-control" placeholder="Email address">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
+                        <form action="#">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input required id="newsletter1" type="email" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" id="subscribe-newsletter-btn" type="submit">Subscribe</button>
+                        </form>
                     </div>
                 </form>
             </div>
@@ -212,6 +226,7 @@
 <script>
     const BASE_URL = '{{$page->baseUrl}}';
 </script>
+<script type="text/javascript" src="{{$page->baseUrl . mix('js/main.js', 'assets/build') }}"></script>
 @yield('scripts')
 
 </body>

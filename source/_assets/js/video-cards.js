@@ -1,10 +1,10 @@
-const {shuffle_array, locale_path_not_en, generate_video_duration, generate_random_views, generate_uploaded_at} = require('./helpers.js');
+const {generate_video_duration, locale_path_not_en, generate_random_views, generate_uploaded_at} = require("./helpers");
 
 const video_block = (title, user, uploaded_at) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
     <div class="card h-100 shadow-sm">
         <div class="position-relative">
-            <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1 border border-secondary">${generate_video_duration()}</span>
+            <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1">${generate_video_duration()}</span>
             
             <div class="spinner-card z-1 position-absolute top-50 start-50 translate-middle">
                 <div class="spinner-border" role="status">
@@ -22,7 +22,7 @@ const video_block = (title, user, uploaded_at) => `
         <div class="card-body">
             <h6><a href="${locale_path_not_en()}video.html">${title}</a></h6>
             <small class="badge text-bg-secondary">${generate_random_views()}</small>
-            <small class="ms-2"><time>${generate_uploaded_at()}</time></small>
+            <small class="text-black ms-2"><time>${generate_uploaded_at()}</time></small>
             <div class="card-footer mt-3 bg-transparent px-0">
                 <span>By </span>
                 <strong class="small bold"><a href="${locale_path_not_en()}profile.html">${user}</a></strong>
@@ -97,42 +97,3 @@ let user_names = [
     "Kevin Hall", "Carol Rivera", "Brian Campbell", "Amanda Mitchell", "George Carter",
     "Melissa Roberts", "Edward Gomez", "Stephanie Phillips", "Ronald Evans", "Rebecca Turner"
 ];
-
-
-const max_videos_per_page = 12;
-const main = document.querySelector('main div.row');
-
-video_titles = shuffle_array(video_titles);
-user_names = shuffle_array(user_names);
-
-for (let i = 0; i < max_videos_per_page; i++) {
-    let title = video_titles.shift();
-    let user = user_names.shift();
-
-    let body = video_block(title, user);
-    main.innerHTML += body;
-}
-
-function load_random_img(el) {
-
-    const rand_img = Math.floor(Math.random() * 1080) + 1;
-    let image = new Image();
-    image.onload = function () {
-        let card = el.parentElement;
-        card.querySelector('.spinner-card').remove();
-        el.remove();
-        card.innerHTML = this.outerHTML + card.innerHTML;
-    };
-    
-    image.onerror = function () {
-        load_random_img(el);
-    };
-
-    image.classList.add('w-100');
-    image.classList.add('rounded-top');
-    image.src = `https://picsum.photos/id/${rand_img}/320/180`;
-}
-
-document.querySelectorAll('.bd-placeholder-img').forEach(el => {
-    load_random_img(el);
-});

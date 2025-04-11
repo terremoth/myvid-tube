@@ -24,15 +24,15 @@
                 <div class="col-md-6 d-flex align-items-center">
                     <small class="badge text-bg-secondary">14K views</small>
                     <strong class="small bold ms-2"><a href="profile.html"></a></strong>
-                    <time class="badge text-black">1 week ago</time>
+                    <time class="ms-2 bg-body-tertiary p-1 rounded">1 week ago</time>
                 </div>
                 <div class="col-md-6 text-sm-start text-md-end mt-3 mt-sm-3 mt-md-0">
                     <a class="btn btn-lg btn-outline-primary shadow-sm like" data-bs-toggle="tooltip"
                        data-bs-placement="top" data-bs-title="Like"><i class="fa fa-thumbs-up"></i></a>
-                    <span class="badge text-black bg-body-secondary like-counter">43</span>
+                    <span class="small p-1 bg-body-secondary rounded like-counter like-counter">43</span>
                     <a class="btn btn-lg btn-outline-warning dislike" data-bs-toggle="tooltip"
                        data-bs-placement="top" data-bs-title="Dislike"><i class="fa fa-thumbs-down"></i></a>
-                    <span class="badge bg-body-secondary shadow-sm text-black dislike-counter">6</span>
+                    <span class="small p-1 bg-body-secondary rounded like-counter dislike-counter">6</span>
                     <a class="btn btn-outline-primary ms-4 fav-btn"><i class="fa fa-heart"></i> Favorite</a>
                 </div>
             </div>
