@@ -1,7 +1,8 @@
 {
     "require": {
         "tightenco/jigsaw": "^1.7",
-        "elaborate-code/jigsaw-localization": "^1.1"
+        "elaborate-code/jigsaw-localization": "^1.1",
+        "fakerphp/faker": "^1.24"
     },
     "scripts": {
         "deploy": [

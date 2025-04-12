@@ -1,9 +1,9 @@
 const {shuffle_array, locale_path_not_en, generate_video_duration, generate_random_views, generate_uploaded_at} = require('./helpers.js');
 
-const video_block = (title, user, uploaded_at) => `
+const video_block = (title, user) => `
 <div class="col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3">
     <div class="card h-100 shadow-sm">
-        <div class="position-relative">
+        <div class="position-relative ratio-16x9">
             <span class="text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1 border border-secondary">${generate_video_duration()}</span>
             
             <div class="spinner-card z-1 position-absolute top-50 start-50 translate-middle">
@@ -12,11 +12,7 @@ const video_block = (title, user, uploaded_at) => `
                 </div>
             </div>
             
-            <svg class="w-100 bd-placeholder-img card-img-top" width="100%" height="175" xmlns="http://www.w3.org/2000/svg" role="img" 
-                aria-label="Placeholder" preserveAspectRatio="xMidYMid slice">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect>
-            </svg>
+            <img class="w-100 rounded bd-placeholder-img" width="320" height="180" src="${BASE_URL}/assets/images/loading.webp" alt="Loading">
         </div>
 
         <div class="card-body">
@@ -99,37 +95,56 @@ let user_names = [
 ];
 
 
-const max_videos_per_page = 12;
-const main = document.querySelector('main div.row');
+// const max_videos_per_page = 12;
+// const main = document.querySelector('main div.row');
 
 video_titles = shuffle_array(video_titles);
 user_names = shuffle_array(user_names);
 
-for (let i = 0; i < max_videos_per_page; i++) {
+// for (let i = 0; i < max_videos_per_page; i++) {
+//
+//     let body = video_block(title, user);
+//     // main.innerHTML += body;
+// }
+
+document.querySelectorAll('.card').forEach(card => {
     let title = video_titles.shift();
     let user = user_names.shift();
+    let video_duration = card.querySelector('.video-duration');
+    video_duration.classList.remove('col-2', 'pt-2');
+    video_duration.innerHTML = generate_video_duration();
+    video_title = card.querySelector('h6 a');
+    video_title.setAttribute('href', '#');
+    video_title.innerHTML = title;
+    card.querySelector('.video-views').innerHTML = generate_random_views();
+    card.querySelector('.video-uploaded-at').innerHTML = generate_uploaded_at();
+    card.querySelector('.card-footer span').innerHTML = 'by';
+    card.querySelector('.card-footer strong a').innerHTML = user;
+});
 
-    let body = video_block(title, user);
-    main.innerHTML += body;
-}
+document.querySelectorAll('.placeholder,.placeholder-glow').forEach(el => {
+    el.classList.remove('placeholder', 'placeholder-glow');
+});
 
 function load_random_img(el) {
 
     const rand_img = Math.floor(Math.random() * 1080) + 1;
+    let parent = el.parentElement
+
+
     let image = new Image();
     image.onload = function () {
-        let card = el.parentElement;
-        card.querySelector('.spinner-card').remove();
-        el.remove();
-        card.innerHTML = this.outerHTML + card.innerHTML;
+        parent.querySelector('.spinner-card')?.remove();
+        el.setAttribute('loading', 'eager');
+        el.setAttribute('fetchpriority', 'high');
+        el.setAttribute('src', `https://picsum.photos/id/${rand_img}/320/180`);
+        el.setAttribute('alt', parent.querySelector('body h6 a')?.innerHTML);
     };
-    
+
     image.onerror = function () {
         load_random_img(el);
     };
 
-    image.classList.add('w-100');
-    image.classList.add('rounded-top');
     image.src = `https://picsum.photos/id/${rand_img}/320/180`;
 }
 

@@ -21,3 +21,5 @@ use TightenCo\Jigsaw\Events\EventBus;
 use ElaborateCode\JigsawLocalization\LoadLocalization;
 
 $events->beforeBuild([LoadLocalization::class]);
+
+//require_once 'support.php';

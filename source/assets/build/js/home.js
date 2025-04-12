@@ -138,35 +138,56 @@ var _require = __webpack_require__(/*! ./helpers.js */ "./source/_assets/js/help
   generate_video_duration = _require.generate_video_duration,
   generate_random_views = _require.generate_random_views,
   generate_uploaded_at = _require.generate_uploaded_at;
-var video_block = function video_block(title, user, uploaded_at) {
-  return "\n<div class=\"col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3\">\n    <div class=\"card h-100 shadow-sm\">\n        <div class=\"position-relative\">\n            <span class=\"text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1 border border-secondary\">".concat(generate_video_duration(), "</span>\n            \n            <div class=\"spinner-card z-1 position-absolute top-50 start-50 translate-middle\">\n                <div class=\"spinner-border\" role=\"status\">\n                    <span class=\"visually-hidden\">Loading...</span>\n                </div>\n            </div>\n            \n            <svg class=\"w-100 bd-placeholder-img card-img-top\" width=\"100%\" height=\"175\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" \n                aria-label=\"Placeholder\" preserveAspectRatio=\"xMidYMid slice\">\n                <title>Placeholder</title>\n                <rect width=\"100%\" height=\"100%\" fill=\"#868e96\"></rect>\n            </svg>\n        </div>\n\n        <div class=\"card-body\">\n            <h6><a href=\"").concat(locale_path_not_en(), "video.html\">").concat(title, "</a></h6>\n            <small class=\"badge text-bg-secondary\">").concat(generate_random_views(), "</small>\n            <small class=\"ms-2\"><time>").concat(generate_uploaded_at(), "</time></small>\n            <div class=\"card-footer mt-3 bg-transparent px-0\">\n                <span>By </span>\n                <strong class=\"small bold\"><a href=\"").concat(locale_path_not_en(), "profile.html\">").concat(user, "</a></strong>\n            </div>\n        </div>  \n    </div>\n</div>\n");
+var video_block = function video_block(title, user) {
+  return "\n<div class=\"col-sm-6 col-md-4 col-xs-1 col-lg-3 mt-3\">\n    <div class=\"card h-100 shadow-sm\">\n        <div class=\"position-relative ratio-16x9\">\n            <span class=\"text-white rounded px-2 bg-black z-1 position-absolute bottom-0 end-0 mb-1 me-1 border border-secondary\">".concat(generate_video_duration(), "</span>\n            \n            <div class=\"spinner-card z-1 position-absolute top-50 start-50 translate-middle\">\n                <div class=\"spinner-border\" role=\"status\">\n                    <span class=\"visually-hidden\">Loading...</span>\n                </div>\n            </div>\n            \n            <img class=\"w-100 rounded bd-placeholder-img\" width=\"320\" height=\"180\" src=\"").concat(BASE_URL, "/assets/images/loading.webp\" alt=\"Loading\">\n        </div>\n\n        <div class=\"card-body\">\n            <h6><a href=\"").concat(locale_path_not_en(), "video.html\">").concat(title, "</a></h6>\n            <small class=\"badge text-bg-secondary\">").concat(generate_random_views(), "</small>\n            <small class=\"ms-2\"><time>").concat(generate_uploaded_at(), "</time></small>\n            <div class=\"card-footer mt-3 bg-transparent px-0\">\n                <span>By </span>\n                <strong class=\"small bold\"><a href=\"").concat(locale_path_not_en(), "profile.html\">").concat(user, "</a></strong>\n            </div>\n        </div>  \n    </div>\n</div>\n");
 };
 var video_titles = ["10 Things You Didn't Know About Space", "How to Make the Perfect Pancakes", "I Tried Waking Up at 5AM for a Week", "The Truth About Fast Food", "Top 5 Budget Travel Destinations", "Unboxing the New iPhone 15 Pro", "Reacting to My Old Cringe Videos", "This App Will Change Your Life!", "Beginner's Guide to Investing", "What Happens If You Don’t Sleep for 72 Hours?", "24 Hours in the World’s Quietest Room", "My Dog Picks My Outfits for a Day", "Extreme Room Makeover 2025", "You Won’t Believe What I Found in the Woods", "5-Minute Crafts That Actually Work", "Trying Viral TikTok Recipes", "Day in the Life of a Software Engineer", "The Most Satisfying Video You’ll Watch Today", "Living on $1 a Day in New York", "I Learned Guitar in 30 Days", "Why Nobody Talks About This Anymore", "Can You Beat Minecraft Without Jumping?", "100 Layers of Duct Tape Challenge", "I Survived on Only Water for 3 Days", "The Evolution of Internet Memes", "What Happens If You Pour Lava on Ice?", "Top 10 Scariest Moments Caught on Camera", "Building a PC with My Dad", "Every Marvel Movie Ranked Worst to Best", "How I Lost 20 Pounds in 2 Months", "I Let an AI Control My Life for 24 Hours", "Behind the Scenes of a YouTube Video", "The Smartest Way to Study for Exams", "This Island Has No Laws", "Trying Every Starbucks Drink on the Menu", "$1 vs $1,000 Food Challenge", "My Honest College Experience", "The Most Expensive House on Zillow", "Secrets TikTok Doesn’t Want You to Know", "Reacting to Life Hacks with My Grandma", "What If Earth Stopped Spinning?", "How I Made $10,000 in a Month Online", "I Tried Living Like MrBeast", "The Best Free Video Editors in 2025", "Flying to Another Country Just for Lunch", "What School Doesn’t Teach You", "Learning to Dance in 7 Days", "Can You Survive in the Wild Without Tools?", "This Website Is Actually Genius", "If You Laugh, You Lose – Impossible Edition"];
 var user_names = ["James Smith", "Mary Johnson", "John Williams", "Patricia Brown", "Robert Jones", "Jennifer Garcia", "Michael Miller", "Linda Davis", "William Rodriguez", "Elizabeth Martinez", "David Hernandez", "Barbara Lopez", "Richard Gonzalez", "Susan Wilson", "Joseph Anderson", "Jessica Thomas", "Thomas Taylor", "Sarah Moore", "Charles Jackson", "Karen Martin", "Christopher Lee", "Nancy Perez", "Daniel Thompson", "Lisa White", "Matthew Harris", "Margaret Sanchez", "Anthony Clark", "Betty Ramirez", "Donald Lewis", "Sandra Robinson", "Mark Walker", "Ashley Young", "Paul Allen", "Kimberly King", "Steven Wright", "Emily Scott", "Andrew Green", "Donna Adams", "Joshua Baker", "Michelle Nelson", "Kevin Hall", "Carol Rivera", "Brian Campbell", "Amanda Mitchell", "George Carter", "Melissa Roberts", "Edward Gomez", "Stephanie Phillips", "Ronald Evans", "Rebecca Turner"];
-var max_videos_per_page = 12;
-var main = document.querySelector('main div.row');
+
+// const max_videos_per_page = 12;
+// const main = document.querySelector('main div.row');
+
 video_titles = shuffle_array(video_titles);
 user_names = shuffle_array(user_names);
-for (var i = 0; i < max_videos_per_page; i++) {
+
+// for (let i = 0; i < max_videos_per_page; i++) {
+//
+//     let body = video_block(title, user);
+//     // main.innerHTML += body;
+// }
+
+document.querySelectorAll('.card').forEach(function (card) {
   var title = video_titles.shift();
   var user = user_names.shift();
-  var body = video_block(title, user);
-  main.innerHTML += body;
-}
+  var video_duration = card.querySelector('.video-duration');
+  video_duration.classList.remove('col-2', 'pt-2');
+  video_duration.innerHTML = generate_video_duration();
+  video_title = card.querySelector('h6 a');
+  video_title.setAttribute('href', '#');
+  video_title.innerHTML = title;
+  card.querySelector('.video-views').innerHTML = generate_random_views();
+  card.querySelector('.video-uploaded-at').innerHTML = generate_uploaded_at();
+  card.querySelector('.card-footer span').innerHTML = 'by';
+  card.querySelector('.card-footer strong a').innerHTML = user;
+});
+document.querySelectorAll('.placeholder,.placeholder-glow').forEach(function (el) {
+  el.classList.remove('placeholder', 'placeholder-glow');
+});
 function load_random_img(el) {
   var rand_img = Math.floor(Math.random() * 1080) + 1;
+  var parent = el.parentElement;
   var image = new Image();
   image.onload = function () {
-    var card = el.parentElement;
-    card.querySelector('.spinner-card').remove();
-    el.remove();
-    card.innerHTML = this.outerHTML + card.innerHTML;
+    var _parent$querySelector, _parent$querySelector2;
+    (_parent$querySelector = parent.querySelector('.spinner-card')) === null || _parent$querySelector === void 0 || _parent$querySelector.remove();
+    el.setAttribute('loading', 'eager');
+    el.setAttribute('fetchpriority', 'high');
+    el.setAttribute('src', "https://picsum.photos/id/".concat(rand_img, "/320/180"));
+    el.setAttribute('alt', (_parent$querySelector2 = parent.querySelector('body h6 a')) === null || _parent$querySelector2 === void 0 ? void 0 : _parent$querySelector2.innerHTML);
   };
   image.onerror = function () {
     load_random_img(el);
   };
-  image.classList.add('w-100');
-  image.classList.add('rounded-top');
   image.src = "https://picsum.photos/id/".concat(rand_img, "/320/180");
 }
 document.querySelectorAll('.bd-placeholder-img').forEach(function (el) {

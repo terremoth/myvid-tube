@@ -12,8 +12,13 @@
         <article class="col-lg-9">
             <div class="position-relative">
                 <button
-                    class="btn btn-primary opacity-75 video-play-btn top-50 start-50 translate-middle position-absolute border z-1 rounded-circle btn-2xl px-4 py-4 shadow"><i
-                        class="fa fa-play fa-2xl ms-1 px-lg-3 py-lg-4"></i></button>
+                    class="video-play-btn opacity-75 bg-transparent top-50 start-50 translate-middle position-absolute z-1 border-0 rounded-circle">
+                    <span class="fa-stack fa-3x">
+                        <i class="fa-solid text-primary fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-play fa-stack-1x fa-inverse"></i>
+                    </span>
+{{--                    <i class="fa fa-play fa-2xl ms-1 px-lg-3 py-lg-4"></i>--}}
+                </button>
                 <video height="" controls class="ratio ratio-16x9 w-100">
                     <source type="video/mp4">
                 </video>

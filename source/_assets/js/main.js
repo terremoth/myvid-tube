@@ -31,7 +31,6 @@ input_search.addEventListener('input', () => {
     }
 });
 
-
 input_search.addEventListener('keydown', (e) => {
     if (e.keyCode === 40) {
         currentFocus++

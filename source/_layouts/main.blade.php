@@ -8,6 +8,11 @@
     <meta name="author" content="Terremoth - github.com/terremoth">
     <link rel="canonical" href="{{ $page->getUrl() }}">
     <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="{{$page->baseUrl}}/assets/favicon.ico">
+    <link rel="preconnect" href="{{$page->baseUrl}}/assets/images/loading.webp" crossorigin>
+    <link rel="dns-prefetch" href="{{$page->baseUrl}}/assets/images/loading.webp">
+
+    <link rel="preconnect" href="https://picsum.photos" crossorigin>
+    <link rel="dns-prefetch" href="https://picsum.photos">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:url" content="https://terremoth.github.io/myvid-tube/">
@@ -68,7 +73,16 @@
         <div class="w-100 mt-3 mt-lg-0">
             <form class="d-flex ms-sm-3 col-lg-9" role="search">
                 <div class="input-group">
-                    <input role="combobox" autocomplete="off" list="" id="search" class="form-control flex-grow-1 shadow-sm" type="search" placeholder="Search"
+                    <input aria-expanded="false"
+                           aria-controls="trend-history"
+                           aria-autocomplete="list"
+                           role="combobox"
+                           autocomplete="off"
+                           list=""
+                           id="search"
+                           class="form-control flex-grow-1 shadow-sm"
+                           type="search"
+                           placeholder="Search"
                            aria-label="Search">
                     <datalist class="position-absolute border border-primary rounded-bottom bd-white w-100 z-1 top-100" id="trend-history">
                         <option role="button" class="text-black bg-white w-100" value="the random ronaldinho">🔍 the random ronaldinho</option>
@@ -79,14 +93,14 @@
                     </datalist>
                     <div class="w-auto">
                         <button class="btn btn-primary px-4 rounded-start-0 shadow-sm" type="submit"><i
-                                    class="fa fa-magnifying-glass"></i></button>
+                                    class="fa fa-magnifying-glass"></i><span class="visually-hidden">Search</span></button>
                     </div>
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle ms-1" type="button" id="dropdownMenuButton1"
+                        <button title="Choose another language" class="btn dropdown-toggle ms-1" type="button" id="dropdown-manu-languages"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-globe fa-xl"></i>
+                            <i class="fa fa-globe fa-xl"></i><span class="visually-hidden">Languages</span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-manu-languages">
                             @foreach(['en' => ['English', 'us'], 'es' => ['Spanish', 'es'], 'pt-BR' => ['Portuguese', 'br']] as $locale => $flag)
                                 <li>
                                     <a class="dropdown-item" href="{{ translate_url($page, $locale) }}">
@@ -128,7 +142,7 @@
                 </li>
                 <li class="nav-item dropdown ms-3">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
+                       aria-expanded="false" aria-label="Profile menu">
                         <i class="fa fa-circle-user fa-xl"></i>
                         <span class="d-inline d-lg-none ms-2">Profile</span>
                     </a>
@@ -207,7 +221,9 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2025 - <a href="https://github.com/terremoth/myvid-tube">Project</a> made by <a href="https://github.com/terremoth">Terremoth</a> with ⚡ & ❤️ - Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a></p>
+            <p>&copy; 2025 - <a class="text-dark" href="https://github.com/terremoth/myvid-tube">Project</a>
+                made by <a class="text-dark" href="https://github.com/terremoth">Terremoth</a>
+                with ⚡ & ❤️ - Licensed under <a class="text-dark" href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a></p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" href="#" aria-label="Instagram"><i
                                 class="fa-brands fa-2xl fa-instagram"></i></a></li>
