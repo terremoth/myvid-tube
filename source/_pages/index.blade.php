@@ -41,7 +41,7 @@
                         <small class="placeholder col-8 ms-2"><time class="video-uploaded-at"></time></small>
                         <div class="card-footer mt-3 bg-transparent px-0">
                             <span class="placeholder col-6"> </span>
-                            <strong class="small bold placeholder"><a href="${locale_path_not_en()}profile.html"></a></strong>
+                            <strong class="small bold placeholder"><a href="profile.html"></a></strong>
                         </div>
                     </div>
                 </div>

@@ -163,7 +163,7 @@ document.querySelectorAll('.card').forEach(function (card) {
   video_duration.classList.remove('col-2', 'pt-2');
   video_duration.innerHTML = generate_video_duration();
   video_title = card.querySelector('h6 a');
-  video_title.setAttribute('href', '#');
+  video_title.setAttribute('href', 'video.html');
   video_title.innerHTML = title;
   card.querySelector('.video-views').innerHTML = generate_random_views();
   card.querySelector('.video-uploaded-at').innerHTML = generate_uploaded_at();
