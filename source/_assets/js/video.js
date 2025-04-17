@@ -3,34 +3,34 @@ const {shuffle_array, is_mobile, base_url} = require('./helpers.js');
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-fetch(base_url('assets/videos.json')).then(async resp => {
-    const json = await resp.json();
-    let videos = json.videos;
-    let shuffle = shuffle_array(videos);
-    let chosen_video = shuffle[0];
-    let img = new Image();
-
-    img.onload = function() {
-        // document.querySelector('article video').height = img.height; 
-        img = null;
-    };
-    img.src = chosen_video.thumb;
-
-    let video_container = document.querySelector('article video');
-    video_container.preload = 'metadata';
-    video_container.poster = chosen_video.thumb;
-    video_container.onloadedmetadata = function () {
-        // logic here
-    };
-
-    video_container.src = chosen_video.sources[0];
-
-    document.querySelector('article h1').innerHTML = chosen_video.title;
-    document.querySelector('article video source').src = chosen_video.sources[0];
-    document.querySelector('article a').innerHTML = chosen_video.subtitle;
-    document.querySelector('article p').innerHTML = chosen_video.description;
-
-});
+// fetch(base_url('assets/videos.json')).then(async resp => {
+//     const json = await resp.json();
+//     let videos = json.videos;
+//     let shuffle = shuffle_array(videos);
+//     let chosen_video = shuffle[0];
+//     let img = new Image();
+//
+//     img.onload = function() {
+//         // document.querySelector('article video').height = img.height;
+//         img = null;
+//     };
+//     img.src = chosen_video.thumb;
+//
+//     let video_container = document.querySelector('article video');
+//     video_container.preload = 'metadata';
+//     video_container.poster = chosen_video.thumb;
+//     video_container.onloadedmetadata = function () {
+//         // logic here
+//     };
+//
+//     video_container.src = chosen_video.sources[0];
+//
+//     document.querySelector('article h1').innerHTML = chosen_video.title;
+//     document.querySelector('article video source').src = chosen_video.sources[0];
+//     document.querySelector('article a').innerHTML = chosen_video.subtitle;
+//     document.querySelector('article p').innerHTML = chosen_video.description;
+//
+// });
 
 const play_btn = document.querySelector('.video-play-btn');
 const video = document.querySelector('video');

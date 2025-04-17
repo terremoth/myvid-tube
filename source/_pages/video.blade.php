@@ -21,16 +21,19 @@
                     </span>
 {{--                    <i class="fa fa-play fa-2xl ms-1 px-lg-3 py-lg-4"></i>--}}
                 </button>
-                <video height="" controls class="ratio ratio-16x9 w-100">
-                    <source type="video/mp4">
+                <video poster="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                       controls
+                       class="ratio ratio-16x9 w-100">
+                    <source type="video/mp4" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+                    <track src="{{$page->baseUrl}}/assets/big-buck-bunny.srt">
                 </video>
             </div>
-            <h1 class="display-6 my-2"></h1>
+            <h1 class="display-6 my-2">Big Buck Bunny</h1>
 
             <div class="row mt-3">
                 <div class="col-md-6 d-flex align-items-center">
                     <small class="badge text-bg-secondary">14K views</small>
-                    <strong class="small bold ms-2"><a href="profile.html"></a></strong>
+                    <strong class="small bold ms-2"><a href="profile.html">By Blender Foundation</a></strong>
                     <time class="ms-2 bg-body-tertiary p-1 rounded">1 week ago</time>
                 </div>
                 <div class="col-md-6 text-sm-start text-md-end mt-3 mt-sm-3 mt-md-0">
@@ -46,20 +49,11 @@
                 </div>
             </div>
 
-            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <strong class="me-auto">MY-Vid Tube</strong>
-                        <small></small>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        {message}
-                    </div>
-                </div>
-            </div>
+            <p class="mt-3">
+                {!!nl2br("Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain\"t no bunny anymore! In the typical cartoon tradition he prepares the nasty rodents a comical revenge.
 
-            <p class="mt-3"></p>
+                Licensed under the Creative Commons Attribution license
+                https://www.bigbuckbunny.org</p>") !!}
             <hr class="hr">
             <h2 class="h3 mb-3">Comments</h2>
             <textarea maxlength="1024" name="content" class="form-control" required rows="3"
