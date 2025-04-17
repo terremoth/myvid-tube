@@ -199,9 +199,14 @@
                 </button>
                 <video poster="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
                        controls
+                       preload="metadata"
                        class="ratio ratio-16x9 w-100">
                     <source type="video/mp4" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
-                    <track src="https://terremoth.github.io/myvid-tube/assets/big-buck-bunny.srt">
+                    <track  label="English"
+                            kind="subtitles"
+                            srclang="en"
+                            default
+                            src="https://terremoth.github.io/myvid-tube/assets/big-buck-bunny.srt">
                 </video>
             </div>
             <h1 class="display-6 my-2">Big Buck Bunny</h1>
