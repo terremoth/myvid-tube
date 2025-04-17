@@ -106,6 +106,7 @@
             <h3 class="mb-3 mb-lg-2">Related videos</h3>
             <div class="col mb-3">
                 <div class="card">
+
                     <img alt="video sample" src="https://picsum.photos/id/30/320/180">
                     <div class="card-body">
                         <h4 class="h6"><a href="video.html">Create your own cup design</a></h4>
