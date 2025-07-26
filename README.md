@@ -5,6 +5,10 @@ Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a 
 
 ![image](https://github.com/user-attachments/assets/c59a8000-3244-43d6-833d-f3bc6067085e)
 
+## LightHouse Tests (Home)
+<img width="603" height="255" alt="image" src="https://github.com/user-attachments/assets/9eb6970c-baf1-4a49-a7e6-7fadd98259cc" />
+
+
 ### TO-DO
 - [x] website footer
 - [x] video page html
