@@ -3,7 +3,7 @@ Video Website Demo (Tube-like). Implementation with Bootstrap 5.3 and Font-Aweso
 
 Goal: Zero custom CSS and be so dynamic you won't even notice it doesn't have a single backend processing. 
 
-![image](https://github.com/user-attachments/assets/c59a8000-3244-43d6-833d-f3bc6067085e)
+<img width="1450" height="874" alt="image" src="https://github.com/user-attachments/assets/5d086939-294f-449d-9060-2cbfb0a7ad28" />
 
 ## LightHouse Tests (Home)
 <img width="603" height="255" alt="image" src="https://github.com/user-attachments/assets/9eb6970c-baf1-4a49-a7e6-7fadd98259cc" />
