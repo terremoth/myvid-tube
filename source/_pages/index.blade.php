@@ -3,18 +3,18 @@
 @section('body')
 
 <section class="container mt-3">
-    <a href="tag/tag-name" class="badge text-bg-danger link-underline-danger">Viral</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">{{ __($page, "news") }}</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Music</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Entertainment</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Humor</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Sport</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Cars</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Kids</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Tech</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Science</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Games</a>
-    <a href="tag/tag-name" class="badge text-bg-primary link-underline-primary">Documentary</a>
+    <a href="tag/Viral" class="badge text-bg-danger link-underline-danger">Viral</a>
+    <a href="tag/News" class="badge text-bg-primary link-underline-primary">{{ __($page, "news") }}</a>
+    <a href="tag/Music" class="badge text-bg-primary link-underline-primary">Music</a>
+    <a href="tag/Entertainment" class="badge text-bg-primary link-underline-primary">Entertainment</a>
+    <a href="tag/Humor" class="badge text-bg-primary link-underline-primary">Humor</a>
+    <a href="tag/Sport" class="badge text-bg-primary link-underline-primary">Sport</a>
+    <a href="tag/Cars" class="badge text-bg-primary link-underline-primary">Cars</a>
+    <a href="tag/Kids" class="badge text-bg-primary link-underline-primary">Kids</a>
+    <a href="tag/Tech" class="badge text-bg-primary link-underline-primary">Tech</a>
+    <a href="tag/Science" class="badge text-bg-primary link-underline-primary">Science</a>
+    <a href="tag/Games" class="badge text-bg-primary link-underline-primary">Games</a>
+    <a href="tag/Documentary" class="badge text-bg-primary link-underline-primary">Documentary</a>
 </section>
 
 <main class="container">
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="card-body">
-                        <h6><a class="placeholder col-12" href="${locale_path_not_en()}video.html"></a></h6>
+                        <h2 class="fs-6"><a class="placeholder col-12" href="${locale_path_not_en()}video.html"></a></h6>
                         <small class="badge text-bg-secondary placeholder video-views"></small>
 {{--                        <small class="ms-2 placeholder col-8"><time></time></small>--}}
                         <small class="placeholder col-8 ms-2"><time class="video-uploaded-at"></time></small>

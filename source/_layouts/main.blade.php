@@ -62,7 +62,7 @@
 {{--          <i class="fa-solid fa-play fa-stack-1x fa-inverse"></i>--}}
         </span>
 {{--            <img src="{{$page->baseUrl}}/assets/favicon.ico" alt="MY-VID Logo" width="38">--}}
-            <span class="align-self-center">MY-VID</span>
+            <h1 class="align-self-end fs-4">MY-VID</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

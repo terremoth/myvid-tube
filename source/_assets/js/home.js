@@ -138,7 +138,7 @@ function load_random_img(el) {
         el.setAttribute('loading', 'eager');
         el.setAttribute('fetchpriority', 'high');
         el.setAttribute('src', `https://picsum.photos/id/${rand_img}/320/180`);
-        el.setAttribute('alt', parent..parentElement.querySelector('a')?.innerHTML);
+        el.setAttribute('alt', parent.parentElement.querySelector('a')?.innerHTML);
     };
 
     image.onerror = function () {
