@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="card-body">
-                        <h2 class="fs-6"><a class="placeholder col-12" href="${locale_path_not_en()}video.html"></a></h6>
+                        <h2 class="fs-6"><a class="placeholder col-12" href="${locale_path_not_en()}video.html"></a></h2>
                         <small class="badge text-bg-secondary placeholder video-views"></small>
 {{--                        <small class="ms-2 placeholder col-8"><time></time></small>--}}
                         <small class="placeholder col-8 ms-2"><time class="video-uploaded-at"></time></small>

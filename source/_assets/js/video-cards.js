@@ -20,7 +20,7 @@ const video_block = (title, user, uploaded_at) => `
         </div>
 
         <div class="card-body">
-            <h6><a href="${locale_path_not_en()}video.html">${title}</a></h6>
+            <h2 class="fs-6"><a href="${locale_path_not_en()}video.html">${title}</a></h2>
             <small class="badge text-bg-secondary">${generate_random_views()}</small>
             <small class="text-black ms-2"><time>${generate_uploaded_at()}</time></small>
             <div class="card-footer mt-3 bg-transparent px-0">

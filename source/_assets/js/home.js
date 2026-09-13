@@ -16,7 +16,7 @@ const video_block = (title, user) => `
         </div>
 
         <div class="card-body">
-            <h6><a href="${locale_path_not_en()}video.html">${title}</a></h6>
+            <h2 class="fs-6"><a href="${locale_path_not_en()}video.html">${title}</a></h2>
             <small class="badge text-bg-secondary">${generate_random_views()}</small>
             <small class="ms-2"><time>${generate_uploaded_at()}</time></small>
             <div class="card-footer mt-3 bg-transparent px-0">
@@ -113,7 +113,7 @@ document.querySelectorAll('.card').forEach(card => {
     let video_duration = card.querySelector('.video-duration');
     video_duration.classList.remove('col-2', 'pt-2');
     video_duration.innerHTML = generate_video_duration();
-    video_title = card.querySelector('h6 a');
+    video_title = card.querySelector('h2 a');
     video_title.setAttribute('href', 'video.html');
     video_title.innerHTML = title;
     card.querySelector('.video-views').innerHTML = generate_random_views();
